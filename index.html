@@ -230,7 +230,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
                         </div>
                         <!-- Image -->
                         <div style="padding-bottom: 50px;" class="col-12 col-lg-6 text-center">
-                            <img src="/assets/WhatsApp Image 2024-02-24 at 13.27.57_8b099c38.jpg" class="img-fluid" alt="Huzaifa's Image" style="height: 520px; width: 380px; border-radius: 200px; border-top: 5px solid #8f00a1; border-bottom: 5px solid #0084e9; ">
+                            <img src="/assets/WhatsApp Image 2024-02-24 at 13.27.57_8b099c38.jpg" class="img-fluid" alt="Huzaifa's Image" style="height: 500px; width: 400px; border-radius: 100px; border-top: 5px solid #8f00a1; border-bottom: 5px solid #0084e9; ">
                         </div>
                         
                 </div>
@@ -1047,42 +1047,41 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 
 
 <script>
-    $(window).on('load', function () {
-        // Hide preloader and stop animations
-        $('#preloader').fadeOut(300, function() {
-            $('.circle, h1').css('animation', 'none');
-        });
+   $(window).on('load', function () {
+    // Function to type the text with a typewriter effect
+    function typeText() {
+        const textToType = "&lt;Huzaifa Ramzan /&gt;";
+        const typedTextElement = $(".text-container h1");
+        let index = 0;
+        const typingInterval = setInterval(function() {
+            if (index <= textToType.length) {
+                typedTextElement.html(textToType.substring(0, index));
+                index++;
+            } else {
+                clearInterval(typingInterval);
+            }
+        }, 100); // Adjust the typing speed by changing the interval time
+    }
 
-        // Enable scrolling
-        $('body').css('overflow', 'auto');
+    // Call the function to start typing the text immediately
+    typeText();
+
+    // Hide preloader and stop animations
+    $('#preloader').fadeOut(300, function() {
+        $('.circle, h1').css('animation', 'none');
     });
+
+    // Enable scrolling
+    $('body').css('overflow', 'auto');
+});
+
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"> </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </script>
 <script>
-    // Define the text you want to type
-const textToType = "Huzaifa Ramzan";
-
-// Get the span element where the text will be typed
-const typedTextElement = document.getElementById("typed-text");
-
-// Function to type the text
-function typeText() {
-    let index = 0;
-    const typingInterval = setInterval(function() {
-        typedTextElement.textContent += textToType[index];
-        index++;
-        if (index === textToType.length) {
-            clearInterval(typingInterval);
-        }
-    }, 100); // Adjust the typing speed by changing the interval time
-}
-
-// Call the function to start typing the text when the window loads
-window.onload = typeText;
-
+   
 </script>
 
 
