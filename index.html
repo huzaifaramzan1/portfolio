@@ -151,13 +151,12 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     <title>Huzaifa Ramzan</title>
     
 </head>
-
 <div id="preloader">
     <div class="text-container">
-        <h1>&lt;<span id="typed-text"></span> /&gt;</h1>
+        <h1>&lt;Huzaifa Ramzan /&gt;</h1>
     </div>
     <div class="circle"></div>
-</div>
+</div> 
 
 <body class="">
 
@@ -1047,33 +1046,15 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
 
 
 <script>
-   $(window).on('load', function () {
-    // Function to type the text with a typewriter effect
-    function typeText() {
-        const textToType = "&lt;Huzaifa Ramzan /&gt;";
-        const typedTextElement = $(".text-container h1");
-        let index = 0;
-        const typingInterval = setInterval(function() {
-            if (index <= textToType.length) {
-                typedTextElement.html(textToType.substring(0, index));
-                index++;
-            } else {
-                clearInterval(typingInterval);
-            }
-        }, 100); // Adjust the typing speed by changing the interval time
-    }
+      $(window).on('load', function () {
+        // Hide preloader and stop animations
+        $('#preloader').fadeOut(300, function() {
+            $('.circle, h1').css('animation', 'none');
+        });
 
-    // Call the function to start typing the text immediately
-    typeText();
-
-    // Hide preloader and stop animations
-    $('#preloader').fadeOut(300, function() {
-        $('.circle, h1').css('animation', 'none');
+        // Enable scrolling
+        $('body').css('overflow', 'auto');
     });
-
-    // Enable scrolling
-    $('body').css('overflow', 'auto');
-});
 
 </script>
 
