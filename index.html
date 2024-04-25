@@ -976,16 +976,17 @@ const textToType = "Huzaifa Ramzan";
 // Get the span element where the text will be typed
 const typedTextElement = document.getElementById("typed-text");
 
-// Function to type the text
+// Function to type the text with a typewriter effect
 function typeText() {
     let index = 0;
     const typingInterval = setInterval(function() {
-        typedTextElement.textContent += textToType[index];
-        index++;
-        if (index === textToType.length) {
+        if (index <= textToType.length) {
+            typedTextElement.textContent = textToType.substring(0, index);
+            index++;
+        } else {
             clearInterval(typingInterval);
         }
-    }, 100); // Adjust the typing speed by changing the interval time
+    }, 150); // Adjust the typing speed by changing the interval time
 }
 
 // Call the function to start typing the text when the window loads
