@@ -96,6 +96,7 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     animation: moveCircle 1s infinite linear;
 }
 
+
 @keyframes blink {
     0%, 49%, 100% {
         opacity: 1;
@@ -114,6 +115,27 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
     }
     100% {
         transform: translateY(0);
+    }
+    
+}
+/* Existing CSS */
+.star {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+    background: linear-gradient(to right, #f6d365, #fda085);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+@keyframes rotateStar {
+    from {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotateZ(360deg);
     }
 }
 
@@ -976,23 +998,23 @@ const textToType = "Huzaifa Ramzan";
 // Get the span element where the text will be typed
 const typedTextElement = document.getElementById("typed-text");
 
-// Function to type the text with a typewriter effect
+// Function to type the text
 function typeText() {
     let index = 0;
     const typingInterval = setInterval(function() {
-        if (index <= textToType.length) {
-            typedTextElement.textContent = textToType.substring(0, index);
-            index++;
-        } else {
+        typedTextElement.textContent += textToType[index];
+        index++;
+        if (index === textToType.length) {
             clearInterval(typingInterval);
         }
-    }, 150); // Adjust the typing speed by changing the interval time
+    }, 100); // Adjust the typing speed by changing the interval time
 }
 
 // Call the function to start typing the text when the window loads
 window.onload = typeText;
 
 </script>
+
 
 </body>
 
