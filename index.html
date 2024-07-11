@@ -181,7 +181,9 @@ background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100
   transform: rotateX(90deg) translateZ(-40px);
   filter: blur(12px);
 }
-button {
+/* Apply the glitch effect to all buttons except navbar toggler */
+button:not(.navbar-toggler),
+button:not(.navbar-toggler)::after {
   padding: 16px 20px;
   font-size: 18px;
   background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
@@ -194,7 +196,7 @@ button {
   position: relative;
 }
 
-button::after {
+button:not(.navbar-toggler)::after {
   --slice-0: inset(50% 50% 50% 50%);
   --slice-1: inset(80% -6px 0 0);
   --slice-2: inset(50% -6px 30% 0);
@@ -213,7 +215,7 @@ button::after {
   clip-path: var(--slice-0);
 }
 
-button:hover::after {
+button:not(.navbar-toggler):hover::after {
   animation: 1s glitch;
   animation-timing-function: steps(2, end);
 }
@@ -273,19 +275,20 @@ button:hover::after {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
-  
 }
-  /* Hide button on mobile screens */
-  @media (max-width: 767px) {
-      button {
-        display: none;
-      }
-    }
-    @media (max-width: 991.98px) {
-  button {
-    display: none;
+
+/* Media query to hide the glitch effect button from mobile navbar */
+@media (max-width: 991.98px) {
+  .navbar-toggler,
+  .navbar-toggler::after {
+    padding: 16px 20px;
+    font-size: 18px;
+    background: none; /* Or any styles you want to override for the navbar toggler */
+    box-shadow: none;
+    clip-path: none;
   }
 }
+
 
 
 #preloader {
