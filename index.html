@@ -273,7 +273,14 @@ button:hover::after {
     clip-path: var(--slice-1);
     transform: translate(0);
   }
+  
 }
+  /* Hide button on mobile screens */
+  @media (max-width: 767px) {
+      button {
+        display: none;
+      }
+    }
 
 
 #preloader {
@@ -384,7 +391,7 @@ button:hover::after {
            
                     
                 <!--/ Logo SVG Icon -->
-               <a href="index.html"> <span class="fs-90 text-muted fw-bold text-light" style=" font-family: 'Mr De Haviland', cursive; font-size: 3em; color: white;  font-style: normal;"> < Huzaifa Ramzan / > </Huzaifa>    </span></a>
+ <a href="index.html"> <span class="fs-90 text-muted fw-bold text-light" style=" font-family: 'Mr De Haviland', cursive; font-size: 3em; color: white;  font-style: normal;"> < Huzaifa Ramzan / > </Huzaifa>    </span></a>
 
             
             <!-- / Logo-->
